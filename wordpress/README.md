@@ -1,21 +1,5 @@
 # wordpress
 
-## Description
-sample description
+Please refer to [kpt book] for consuming this package.
 
-## Usage
-
-### Fetch the package
-`kpt pkg get REPO_URI[.git]/PKG_PATH[@VERSION] wordpress`
-Details: https://kpt.dev/reference/cli/pkg/get/
-
-### View package content
-`kpt pkg tree wordpress`
-Details: https://kpt.dev/reference/cli/pkg/tree/
-
-### Apply the package
-```
-kpt live init wordpress
-kpt live apply wordpress --reconcile-timeout=2m --output=table
-```
-Details: https://kpt.dev/reference/cli/live/
+[kpt book]: https://kpt.dev/book/03-packages/01-getting-a-package
