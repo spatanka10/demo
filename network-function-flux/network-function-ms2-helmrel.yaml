@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: network-function-ms2
+  namespace: nf-demo
+spec:
+  dependsOn:
+    - name: network-function-ms1
+  interval: 1m
+  chart:
+    spec:
+      chart: ./charts/hello-world 
+      version: '1.0.0'
+      sourceRef:
+        kind: GitRepository
+        name: network-function-gitrepo
+        namespace: flux-system
+      reconcileStrategy: Revision
+      interval: 1m
+  targetNamespace: nf-demo
+  valuesFrom:
+  - kind: ConfigMap
+    name: network-function-values
+    valuesKey: values.yaml
