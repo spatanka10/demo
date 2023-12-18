@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10s
-  url: https://github.com/Nordix/nordix-nephio-packages.git
+  url: https://github.com/Nordix/nordix-nephio-packages
   ref:
     branch: main
   ignore: |
