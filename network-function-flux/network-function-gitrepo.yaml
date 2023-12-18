@@ -7,7 +7,7 @@ spec:
   interval: 10s
   url: https://github.com/Nordix/nordix-nephio-packages
   ref:
-    branch: main
+    branch: master
   ignore: |
     # exclude all
     /*
