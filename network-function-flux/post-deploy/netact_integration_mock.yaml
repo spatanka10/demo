@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: netact_integration_mock
+  name: netactIntegrationMock
   namespace: nf-demo
 data:
   allowed: '"true"'
