@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: network-function 
-  namespace: demo
+  namespace: nf-demo
 spec:
   interval: 1m
   chart:
@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
       reconcileStrategy: Revision
       interval: 1m
-  targetNamespace: demo
+  targetNamespace: nf-demo
   valuesFrom:
   - kind: ConfigMap
     name: network-function-values
