@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: free5gc-gitrepo
+  name: network-function-gitrepo
   namespace: flux-system
 spec:
   interval: 10s
