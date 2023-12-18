@@ -1,0 +1,8 @@
+kind: ConfigMap
+metadata:
+  name: network-function-values
+  namespace: demo
+apiVersion: v1
+data:
+  values.yaml: |+
+    replicaCount: 2
