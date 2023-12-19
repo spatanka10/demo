@@ -3,8 +3,6 @@ kind: Kustomization
 metadata:
   name: app-pre-deploy
 spec:
-  dependsOn:
-    - name: network-function-flux
   sourceRef:
     kind: GitRepository
     name: my-app
