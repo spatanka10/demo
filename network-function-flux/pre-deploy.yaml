@@ -12,5 +12,5 @@ spec:
   interval: 60m
   timeout: 5m
   prune: true
-  wait: true
+  wait: false
   force: true
