@@ -7,7 +7,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: my-app
-  path: "./pre-deploy/"
+  path: "./network-function-flux/flux/pre-deploy/"
   interval: 60m
   timeout: 5m
   prune: true
