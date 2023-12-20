@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: ./network-function-flux/helmcharts/helloworld-go-1.3.12.tgz
-      version: '1.0.0'
+      version: '1.3.12'
       sourceRef:
         kind: GitRepository
         name: my-app
