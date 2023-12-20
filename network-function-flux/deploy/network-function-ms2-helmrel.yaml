@@ -9,7 +9,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: ./network-function-flux/helmcharts/helloworld-1.0.0.tgz
+      chart: ./network-function-flux/helmcharts/hello-world-1.0.0.tgz
       version: '1.0.0'
       sourceRef:
         kind: GitRepository
