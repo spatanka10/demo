@@ -5,6 +5,7 @@ metadata: # kpt-merge: example/network-function-values
 apiVersion: v1
 data:
   values.yaml: |+
-    replicas: 2
-    image:
-      tag: latest
+    helloworld:
+      namespace: example
+      image:
+        tag: latest
