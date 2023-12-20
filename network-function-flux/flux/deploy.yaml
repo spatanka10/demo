@@ -9,7 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: my-app
-  path: "./network-function-flux/flux/deploy/"
+  path: "./network-function-flux/deploy/"
   interval: 60m
   timeout: 5m
   prune: true
