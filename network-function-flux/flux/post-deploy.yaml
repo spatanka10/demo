@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: app-post-deploy
-  namespace: example
+  namespace: default
 spec:
   dependsOn:
     - name: app-deploy
