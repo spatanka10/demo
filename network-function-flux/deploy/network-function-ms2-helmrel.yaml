@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: network-function-ms2
-  namespace: nf-demo
+  namespace: example
 spec:
   dependsOn:
     - name: network-function-ms1
@@ -13,11 +13,10 @@ spec:
       version: '1.0.0'
       sourceRef:
         kind: GitRepository
-        name: network-function-gitrepo
-        namespace: flux-system
+        name: my-app
       reconcileStrategy: Revision
       interval: 1m
-  targetNamespace: nf-demo
+  targetNamespace: example
   valuesFrom:
   - kind: ConfigMap
     name: network-function-values
