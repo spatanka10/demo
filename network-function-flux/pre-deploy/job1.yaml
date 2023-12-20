@@ -12,7 +12,7 @@ spec:
         command: ["sh", "-c"]
         args:
         - |
-          echo "sleep 60"
+          sleep 60
           echo "echo Hi"
       restartPolicy: Never
   backoffLimit: 4
