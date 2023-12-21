@@ -17,7 +17,7 @@ spec:
         name: my-app
         namespace: default
       valuesFiles:
-        - network-function-flux/deploy/values.yaml
+        - ./network-function-flux/deploy/values.yaml
       reconcileStrategy: Revision
       interval: 1m
   targetNamespace: example
