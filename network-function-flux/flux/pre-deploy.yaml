@@ -4,6 +4,9 @@ metadata:
   name: app-pre-deploy
   namespace: default
 spec:
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig
   sourceRef:
     kind: GitRepository
     name: my-app
