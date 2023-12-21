@@ -5,6 +5,9 @@ metadata:
   namespace: default
 spec:
   interval: 1m
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig
   chart:
     spec:
       chart: ./network-function-flux/helmcharts/hello-world-1.0.0.tgz
