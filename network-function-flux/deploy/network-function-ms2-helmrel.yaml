@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: network-function-ms2
-  namespace: default
+  namespace: example
 spec:
   kubeConfig:
     secretRef:
