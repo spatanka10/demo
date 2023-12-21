@@ -16,10 +16,12 @@ spec:
         kind: GitRepository
         name: my-app
         namespace: default
+      valuesFiles:
+        - values.yaml
       reconcileStrategy: Revision
       interval: 1m
   targetNamespace: example
-  valuesFrom:
-  - kind: ConfigMap
-    name: network-function-values
-    valuesKey: values.yaml
+ # valuesFrom:
+ # - kind: ConfigMap
+ #   name: network-function-values
+ #   valuesKey: values.yaml
