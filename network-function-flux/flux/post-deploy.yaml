@@ -4,6 +4,8 @@ metadata:
   name: app-post-deploy
   namespace: default
 spec:
+  secretRef:
+    name: target-kubeconfig
   dependsOn:
     - name: app-deploy
   sourceRef:
