@@ -21,7 +21,7 @@ spec:
       reconcileStrategy: Revision
       interval: 1m
   targetNamespace: example
- valuesFrom:
+  valuesFrom:
   - kind: ConfigMap
     name: network-function-values
     valuesKey: values.yaml
