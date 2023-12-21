@@ -10,6 +10,7 @@ spec:
   kubeConfig:
     secretRef:
       name: target-kubeconfig
+  serviceAccountName:  software
   chart:
     spec:
       chart: ./network-function-flux/helmcharts/hello-world-1.0.0.tgz
