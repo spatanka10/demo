@@ -4,9 +4,6 @@ metadata:
   name: app-deploy
   namespace: default
 spec:
-  kubeConfig:
-    secretRef:
-      name: target-kubeconfig
   dependsOn:
     - name: app-pre-deploy
   sourceRef:
