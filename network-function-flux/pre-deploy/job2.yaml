@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: job2
-  namespace: example
+  namespace: example1
 spec:
   template:
     spec:
