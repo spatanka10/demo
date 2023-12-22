@@ -18,7 +18,7 @@ spec:
         namespace: default
       reconcileStrategy: Revision
       interval: 1m
-  targetNamespace: example
+  targetNamespace: example1
   valuesFrom:
   - kind: ConfigMap
     name: network-function-values
