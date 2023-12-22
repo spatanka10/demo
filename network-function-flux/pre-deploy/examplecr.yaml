@@ -2,7 +2,7 @@ apiVersion: example.com/v1
 kind: MyApp
 metadata:
   name: test-app
-  namespace: example
+  namespace: example1
 spec:
   replicas: 3
   environment: dev
