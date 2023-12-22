@@ -1,7 +1,7 @@
 kind: ConfigMap
 metadata: # kpt-merge: example/network-function-values
   name: network-function-values
-  namespace: example
+  namespace: example1
 apiVersion: v1
 data:
   values.yaml: |+ 
