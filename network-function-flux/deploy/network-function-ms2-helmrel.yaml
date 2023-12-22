@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: network-function-ms2
-  namespace: example
+  namespace: example1
 spec:
   kubeConfig:
     secretRef:
@@ -20,7 +20,7 @@ spec:
         namespace: default
       reconcileStrategy: Revision
       interval: 1m
-  targetNamespace: example
+  targetNamespace: example1
   valuesFrom:
   - kind: ConfigMap
     name: network-function-values
