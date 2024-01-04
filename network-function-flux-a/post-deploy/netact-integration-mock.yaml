@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: # kpt-merge: example1/netactintegrationmock
+  name: netactintegrationmock
+  namespace: example1
+  annotations:
+    internal.kpt.dev/upstream-identifier: '|ConfigMap|example1|netactintegrationmock'
+data:
+  allowed: '"true"'
+  enemies: aliens
+  lives: "4"

@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata: # kpt-merge: example1/job2
+  name: job2
+  namespace: example1
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'batch|Job|example1|job2'
+spec:
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: ubuntu:latest
+        command: ["echo", "Hello, Kubernetes!"]
+      restartPolicy: Never
+  backoffLimit: 4

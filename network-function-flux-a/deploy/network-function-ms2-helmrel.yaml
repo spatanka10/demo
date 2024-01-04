@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata: # kpt-merge: default/network-function-ms2
+  name: network-function-ms2
+  namespace: example1
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'helm.toolkit.fluxcd.io|HelmRelease|default|network-function-ms2'
+spec:
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig # kpt-set: ${targetKubeconfig}
+  dependsOn:
+  - name: network-function-ms1
+  interval: 1m
+  chart:
+    spec:
+      chart: ./network-function-flux/helmcharts/hello-world-1.0.0.tgz
+      version: '1.0.0'
+      sourceRef:
+        kind: GitRepository
+        name: my-app
+        namespace: default
+      reconcileStrategy: Revision
+      interval: 1m
+  targetNamespace: example1 # kpt-set: ${targetNamespace}
+  valuesFrom:
+  - kind: ConfigMap
+    name: network-function-values
+    valuesKey: values.yaml

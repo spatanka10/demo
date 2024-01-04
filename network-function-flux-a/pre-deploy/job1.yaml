@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata: # kpt-merge: example1/job1
+  name: job1
+  namespace: example1
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'batch|Job|example1|job1'
+spec:
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: ubuntu:latest
+        command: ["sh", "-c"]
+        args:
+        - |
+          sleep 60
+          echo "echo Hi"
+      restartPolicy: Never
+  backoffLimit: 4

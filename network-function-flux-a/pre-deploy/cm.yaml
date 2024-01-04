@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: # kpt-merge: example/pre-deploy-cm
+  name: pre-deploy-cm
+  namespace: example1
+  annotations:
+    internal.kpt.dev/upstream-identifier: '|ConfigMap|example|pre-deploy-cm'
+data:
+  allowed: '"true"'
+  enemies: aliens
+  lives: "4"
