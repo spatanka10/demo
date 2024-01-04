@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata: # kpt-merge: default/app-pre-deploy
+  name: app-pre-deploy
+  namespace: network-function-flux-a
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|app-pre-deploy'
+spec:
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig
+  sourceRef:
+    kind: GitRepository
+    name: nc-app
+  path: "./network-function-flux-a/pre-deploy/"
+  interval: 60m
+  timeout: 5m
+  prune: true
+  wait: true
+  force: true
