@@ -22,5 +22,19 @@ info:
   description: kpt package for deploying network-function helm charts via flux
 pipeline:
   mutators:
+  - name: PackageVariant.flux-nf-variant-demo..0
+    image: gcr.io/kpt-fn/apply-setters:v0.2.0
+    configMap:
+      replicas: "3"
+      gitreponame: nc-app
+      targetKubeconfig: target-kubeconfig
+      targetNamespace: network-function-flux-a
+  - name: PackageVariant.flux-nf-variant-demo..1
+    image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configMap:
+      namespace: network-function-flux-a
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configPath: package-context.yaml
+  validators:
+  - name: PackageVariant.flux-nf-variant-demo..0
+    image: gcr.io/kpt-fn/kubeval:v0.3
