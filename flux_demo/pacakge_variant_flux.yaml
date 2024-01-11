@@ -1,0 +1,27 @@
+apiVersion: config.porch.kpt.dev/v1alpha1
+kind: PackageVariant
+metadata:
+  name: flux-nf-variant
+  namespace: demo
+spec:
+  upstream:
+    repo: blueprints
+    package: network-function-flux
+    revision: v2
+  downstream:
+    repo: deployments
+    package: network-function-flux-a
+
+  pipeline:
+    validators:
+      - image: gcr.io/kpt-fn/kubeval:v0.3
+    mutators:
+      - image: gcr.io/kpt-fn/apply-setters:v0.2.0
+        configMap:
+          replicas: 3
+          targetKubeconfig: target-kubeconfig
+          targetNamespace: network-function-flux-a
+          gitreponame: nc-app
+      - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+        configMap:
+          namespace: network-function-flux-a
